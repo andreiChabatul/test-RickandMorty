@@ -1,28 +1,33 @@
 export interface IResponeApi {
-    info:    Info;
+    info: Info;
     results: ICharacter[];
+}
+export interface IRequestApi {
+    page: number,
+    name?: string,
+    status?: Status
 }
 
 export interface Info {
     count: number;
     pages: number;
-    next:  string;
-    prev:  string;
+    next: string;
+    prev: string;
 }
 
 export interface ICharacter {
-    id:       number;
-    name:     string;
-    status:   Status;
-    species:  Species;
-    type:     string;
-    gender:   Gender;
-    origin:   Location;
+    id: number;
+    name: string;
+    status: Status;
+    species: Species;
+    type: string;
+    gender: Gender;
+    origin: Location;
     location: Location;
-    image:    string;
-    episode:  string[];
-    url:      string;
-    created:  Date;
+    image: string;
+    episode: string[];
+    url: string;
+    created: Date;
 }
 
 export enum Gender {
@@ -34,7 +39,7 @@ export enum Gender {
 
 export interface Location {
     name: string;
-    url:  string;
+    url: string;
 }
 
 export enum Species {
