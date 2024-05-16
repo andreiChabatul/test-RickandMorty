@@ -1,4 +1,4 @@
-import type { IRequestApi, IResponeApi, Status } from "@/types";
+import type { IRequestApi, IResponeApi } from "@/types";
 import axios from "axios";
 
 export const RaMApiServices = {
