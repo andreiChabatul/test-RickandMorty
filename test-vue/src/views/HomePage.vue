@@ -4,7 +4,6 @@ import Pagination from './components/Pagination.vue'
 import Filter from './components/Filter.vue'
 
 import { useStore } from '../store'
-console.log('12ewfcdfsdf')
 const store = useStore()
 store.dispatch('fetchAPI')
 </script>
@@ -29,7 +28,6 @@ store.dispatch('fetchAPI')
 }
 
 .container-characters {
-    background: rgb(39, 43, 51);
     height: 88vh;
     overflow-y: auto;
     display: flex;

@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <article class="article-container">
+  <RouterLink :to="{ path: 'cart', query: { id: character.id } }" class="article-container">
     <div>
       <img class="img" :src="character.image" alt="character image" />
     </div>
@@ -15,13 +15,10 @@ defineProps<{
       <div class="section section-one">
         <h2 class="name">{{ character.name }}</h2>
         <span class="status">
-          <span
-            class="status-icon"
-            :class="{
-              dead: character.status === Status.Dead,
-              alive: character.status === Status.Alive
-            }"
-          ></span>
+          <span class="status-icon" :class="{
+            dead: character.status === Status.Dead,
+            alive: character.status === Status.Alive
+          }"></span>
           <span>{{ character.status }}</span>
           <span>&nbsp-&nbsp</span>
           <span>{{ character.gender }}</span>
@@ -36,13 +33,15 @@ defineProps<{
         <span>{{ character.origin.name }}</span>
       </div>
     </div>
-  </article>
+  </RouterLink>
 </template>
 
 <style scoped>
 .article-container {
-  width: 600px;
-  height: 220px;
+  transition: all .4s;
+  text-decoration: none;
+  width: 500px;
+  height: 180px;
   display: flex;
   overflow: hidden;
   background: rgb(60, 62, 68);
@@ -51,6 +50,10 @@ defineProps<{
   box-shadow:
     rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.article-container:hover {
+  transform: scale(1.05);
 }
 
 .img {
