@@ -1,3 +1,7 @@
 @import './reset.css';
 @import '../../node_modules/primevue/resources/themes/aura-light-green/theme.css';
-@import 'primeicons/primeicons.css'
+@import 'primeicons/primeicons.css';
+
+body {
+    background: rgb(39, 43, 51); 
+}
