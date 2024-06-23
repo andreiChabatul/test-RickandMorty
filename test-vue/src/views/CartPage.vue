@@ -46,6 +46,13 @@ const prev = () => {
     gap: 10%;
 }
 
+@media (max-width: 750px) {
+  .cart-container {
+    padding-top: 55px;
+    gap: 10px;
+  }
+}
+
 .link-home {
     margin: 1%;
     display: inline-block;

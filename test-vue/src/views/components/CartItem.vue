@@ -68,6 +68,12 @@ watch(props, () =>
   border-radius: 15px;
 }
 
+@media (max-width: 450px) {
+  .container-cart {
+    width: 280px;
+  }
+}
+
 .container-cart * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;

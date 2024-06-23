@@ -2,6 +2,7 @@ import { RaMApiServices } from '@/services/RaM.api.service'
 import type { ICharacter } from '@/types'
 import type { State } from '@/types/store'
 import type { InjectionKey } from 'vue'
+// @ts-ignore
 import { createStore, Store, useStore as baseUseStore } from 'vuex'
 import type { ActionContext } from 'vuex/types/index.js'
 
