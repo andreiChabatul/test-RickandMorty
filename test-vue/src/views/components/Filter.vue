@@ -40,6 +40,7 @@ function filterReset() {
 
 <style scoped>
 .container {
+  background: whitesmoke;
   padding: 1%;
   display: flex;
   gap: 1%;
