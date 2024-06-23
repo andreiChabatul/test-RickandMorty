@@ -1,40 +1,47 @@
 <script setup lang="ts">
-import { Status, type ICharacter } from '@/types';
+import { type ICharacter } from '@/types';
 import Tag from 'primevue/tag';
+import { reactive, watch } from 'vue';
 
+interface IData {
+  icon: string,
+  title: string,
+  value: string | number
+}
 
 const props = defineProps<{
   character: ICharacter
 }>()
+let dataDesc: Array<IData> = []
 
-const dataDesc = [
-  {
-    icon: 'pi pi-info-circle',
-    title: 'Status',
-    value: props.character.status
-  },
-  {
-    icon: 'pi pi-prime',
-    title: 'Species',
-    value: props.character.species
-  },
-  {
-    icon: 'pi pi-mars',
-    title: 'Gender',
-    value: props.character.gender
-  },
-  {
-    icon: 'pi pi-map-marker',
-    title: 'Location',
-    value: props.character.location.name
-  },
-  {
-    icon: 'pi pi-chart-bar',
-    title: 'Amount episode',
-    value: props.character.episode.length
-  }
-]
-
+watch(props, () =>
+  dataDesc = [
+    {
+      icon: 'pi pi-info-circle',
+      title: 'Status',
+      value: props.character.status
+    },
+    {
+      icon: 'pi pi-prime',
+      title: 'Species',
+      value: props.character.species
+    },
+    {
+      icon: 'pi pi-mars',
+      title: 'Gender',
+      value: props.character.gender
+    },
+    {
+      icon: 'pi pi-map-marker',
+      title: 'Location',
+      value: props.character.location.name
+    },
+    {
+      icon: 'pi pi-chart-bar',
+      title: 'Amount episode',
+      value: props.character.episode.length
+    }
+  ])
 
 </script>
 
@@ -43,15 +50,10 @@ const dataDesc = [
     <img :src="character.image" alt="character" />
     <figcaption>
       <h2>{{ character.name }}</h2>
-      <div>
-
-        <div v-for="data in dataDesc">
-          <h6 class="title-desc">{{ data.title }}</h6>
-          <Tag severity="info" class="deck-item" :icon=data.icon :value=data.value></Tag>
-        </div>
-
-
-      </div>
+      <li v-for="data in dataDesc">
+        <h6 class="title-desc">{{ data.title }}</h6>
+        <Tag severity="info" class="deck-item" :icon=data.icon :value=data.value></Tag>
+      </li>
     </figcaption>
   </figure>
 </template>
@@ -60,7 +62,7 @@ const dataDesc = [
 .container-cart {
   position: relative;
   overflow: hidden;
-  width: 330px;
+  width: 350px;
   color: #141414;
   font-size: 16px;
   border-radius: 15px;
@@ -98,15 +100,12 @@ const dataDesc = [
 }
 
 .container-cart h2 {
-  margin: 0 0 10px;
-}
-
-.container-cart h2 {
-  font-weight: 300;
-  font-size: 2em;
+  font-size: 1.3em;
   line-height: 1.2em;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
+  margin: 0 0 10px;
+  white-space: nowrap;
 }
 
 .title-desc {

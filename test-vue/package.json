@@ -12,6 +12,7 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "@formkit/auto-animate": "^0.8.2",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "primeicons": "^7.0.0",

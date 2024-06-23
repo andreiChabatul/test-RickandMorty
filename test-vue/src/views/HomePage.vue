@@ -12,7 +12,7 @@ store.dispatch('fetchAPI')
     <main class="main-container">
         <Filter />
         <section v-if="store.state.results.length" class="container-characters">
-            <Card v-for="character in store.state.results" :character="character" />
+            <Card v-for="character in store.state.results" :character="character" v-auto-animate="{ duration: 1000 }"/>
         </section>
         <p class="text-empty" v-else>О, нет 😢! Ничего не найдено</p>
         <Pagination />
